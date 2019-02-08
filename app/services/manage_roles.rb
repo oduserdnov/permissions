@@ -12,7 +12,7 @@ class ManageRoles
       # TODO: list requested `role`'s `permissions`, format that with `to_json` calls or smth like that
     end
 
-    def assign_to(_role_ids, _user_id)
+    def assign_to(_user_id, _role_ids)
       # TODO: assign all requested role(s) to user, raise if anything is missing
     end
 
