@@ -15,7 +15,7 @@ class Permission < ApplicationRecord
   # permissions associated with `users` and `roles` as many-to-many via `assignments`
   # I'd rather split that table into ones to avoid polymorphic relation, especially when we think about query optimization and so on.
   # Otherwise it's OK to have it, I guess.
-  has_many :assignments
+  has_many :assignments, dependent: :destroy
 
   validates :type, :mode, :description, presence: true
   validates :description, uniqueness: { scope: %i[type mode], case_sensitive: false }

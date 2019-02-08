@@ -3,4 +3,6 @@ class Assignment < ApplicationRecord
     belongs_to :grantee, polymorphic: true # polymorphic relation, which is actually `grantee_id` (FK id) + `grantee_type` (FK model name)
     belongs_to :permission
   end
+
+  scope :by_permission, ->(ids) { where permission_id: ids }
 end
